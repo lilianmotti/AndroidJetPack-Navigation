@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.fragment_a.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -38,6 +41,13 @@ class FragmentA : Fragment(), OnFragmentInteractionListener {
         }
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        buttonAtoB.setOnClickListener{
+            it.findNavController().navigate(R.id.action_fragmentA_to_fragmentB)
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,6 +55,8 @@ class FragmentA : Fragment(), OnFragmentInteractionListener {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_a, container, false)
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
    // fun onButtonPressed(uri: Uri) {
