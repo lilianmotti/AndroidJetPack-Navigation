@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,4 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp() =
         findNavController(R.id.nav_host_fragment).navigateUp()
 
+    override fun onFragmentInteraction() {
+        super.onFragmentInteraction()
+    }
 }

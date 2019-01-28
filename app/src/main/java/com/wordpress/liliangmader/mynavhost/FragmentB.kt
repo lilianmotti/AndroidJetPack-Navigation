@@ -23,7 +23,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class FragmentB : Fragment() {
+class FragmentB : Fragment(), OnFragmentInteractionListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -46,9 +46,9 @@ class FragmentB : Fragment() {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
+   // fun onButtonPressed(uri: Uri) {
+     //   listener?.onFragmentInteraction(uri)
+  //  }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -64,20 +64,8 @@ class FragmentB : Fragment() {
         listener = null
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
-    interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+    override fun onFragmentInteraction() {
+        //
     }
 
     companion object {
