@@ -9,5 +9,7 @@
         <action android:id="@+id/action_fragmentA_to_fragmentB" app:destination="@id/fragmentB"/>
     </fragment>
     <fragment android:id="@+id/fragmentB" android:name="com.wordpress.liliangmader.mynavhost.FragmentB"
-              android:label="fragment_b" tools:layout="@layout/fragment_b"/>
+              android:label="fragment_b" tools:layout="@layout/fragment_b">
+        <action android:id="@+id/action_fragmentB_to_fragmentA" app:destination="@id/fragmentA"/>
+    </fragment>
 </navigation>

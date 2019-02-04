@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.fragment_a.*
+import kotlinx.android.synthetic.main.fragment_b.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,6 +46,14 @@ class FragmentB : Fragment(), OnFragmentInteractionListener {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_b, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        buttonBtoA.setOnClickListener{
+            it.findNavController().navigate(R.id.action_fragmentB_to_fragmentA)
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
