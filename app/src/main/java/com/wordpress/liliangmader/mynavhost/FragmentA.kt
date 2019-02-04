@@ -39,23 +39,30 @@ class FragmentA : Fragment(), OnFragmentInteractionListener {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
-        buttonAtoB.setOnClickListener{
-            it.findNavController().navigate(R.id.action_fragmentA_to_fragmentB)
-        }
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_a, container, false)
+        var layoutInflater =inflater.inflate(R.layout.fragment_a, container, false)
+
+        return layoutInflater
+
     }
 
+    override fun onStart() {
+        super.onStart()
+        buttonAtoB.setOnClickListener{
+            it.findNavController().navigate(R.id.action_fragmentA_to_fragmentB)
+
+        }
+    }
 
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -91,6 +98,7 @@ class FragmentA : Fragment(), OnFragmentInteractionListener {
 
     override fun onFragmentInteraction() {
         //
+
     }
 
     companion object {

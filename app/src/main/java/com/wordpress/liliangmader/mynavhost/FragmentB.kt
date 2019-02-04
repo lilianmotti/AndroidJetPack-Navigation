@@ -48,11 +48,11 @@ class FragmentB : Fragment(), OnFragmentInteractionListener {
         return inflater.inflate(R.layout.fragment_b, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onStart() {
+        super.onStart()
         buttonBtoA.setOnClickListener{
             it.findNavController().navigate(R.id.action_fragmentB_to_fragmentA)
+
         }
     }
 
